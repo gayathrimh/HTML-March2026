@@ -4,21 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulb On Off</title>
+    <style>
+        button{
+            margin-left:60px;
+            margin-top:10px;
+            font-size: 2rem;
+        }
+        p{
+            font-size: 2rem;
+            margin-left:60px;
+        }
+    </style>
 </head>
 <body>
-    <img src="bulboff.gif" alt="" id="image1">
+    <img src="bulboff.gif" alt="" id="image1" width="200"><br>
+    <p id="para1">Bulb is Off</p>
     <button id="button1">Toggle</button>
 
     <script>
-        let btn1=document.getElementById("button1");
         let img1=document.getElementById("image1");
+        let par1=document.getElementById("para1");
+        let btn1=document.getElementById("button1");
         let state1=false;
         btn1.onclick=function changeState(){
             if (state1==false){
                 img1.src="bulbon.gif";
+                par1.textContent="Bulb is ON";
                 state1=true;    
             }else{
                 img1.src="bulboff.gif";
+                par1.textContent="Bulb is OFF";
                 state1=false;
             }
             
