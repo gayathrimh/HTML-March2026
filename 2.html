@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb On Off</title>
+</head>
+<body>
+    <img src="bulboff.gif" alt="" id="image1">
+    <button id="button1">Toggle</button>
+
+    <script>
+        let btn1=document.getElementById("button1");
+        let img1=document.getElementById("image1");
+        let state1=false;
+        btn1.onclick=function changeState(){
+            if (state1==false){
+                img1.src="bulbon.gif";
+                state1=true;    
+            }else{
+                img1.src="bulboff.gif";
+                state1=false;
+            }
+            
+        }
+    </script>
+</body>
+</html>
