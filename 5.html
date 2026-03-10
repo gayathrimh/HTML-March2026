@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        #timer1{
+            text-align:center;
+            font-weight:bold;
+            font-size:2rem;
+            font-family:Arial;
+        }
+        #h1{
+            text-align:center;
+            font-weight: bold;
+            font-family:Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">Counter</h1>
+    <p id="timer1">10</p>
+    <script>
+        let tmr1=document.getElementById("timer1");
+        let count1=10;
+        let interval1=setInterval(function handle1(){
+            count1--;
+            tmr1.textContent=count1;
+            if (count1==0){
+                clearInterval(interval1);
+            }
+        },1000);
+
+    </script>
+</body>
+</html>
