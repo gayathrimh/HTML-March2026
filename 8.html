@@ -4,41 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate Password</title>
+    <style>
+        body{
+            font-family:'JetBrains Mono',monospace;
+        }
+    </style>
 </head>
 <body>
     <button id="button1">Generate Pwd</button>
-    <input id="input1" type="number">
-    <p id="password1">Hello</p>
+
+    <input type="number" id="input1" placeholder="Number of Passwords:">
+
+    <input type="number" id="input2" placeholder="Password Length:">
+
+    <ol id="password1"></ol>
+    
     <script>
         let btn1=document.getElementById("button1");
         let pass1=document.getElementById("password1");
         let inp1=document.getElementById("input1");
+        let inp2=document.getElementById("input2");
+
         let s1="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let s2="abcdefghijklmnopqrstuvwxyz";
         let s3="0123456789";
-        let s4=s1+s2+s3;
-        let pwd1="";
-        
-        btn1.onclick=function genPwd(){
-            //alert("button clicked");
-            let r1=Math.floor(Math.random()*26);
-            let r2=Math.floor(Math.random()*26);
-            let r3=Math.floor(Math.random()*10);
-            let r4=Math.floor(Math.random()*62);
-            pwd1=pwd1+s1.charAt(r1);
-            pwd1=pwd1+s2.charAt(r2);
-            pwd1=pwd1+s3.charAt(r3);
-            for(let i=0;i<inp1;i++){
-                r4=Math.floor(Math.random()*62);
-                pwd1=pwd1+s4.charAt(r4);
-                
-            }
-            pass1.innerHTML += "<br>" + pwd1;
-            pwd1="";
 
+        let s4=s1+s2+s3;
+        
+        btn1.onclick=function(){
+
+            pass1.innerHTML="";
+            
+            for(let j=0;j<inp1.value;j++){
+                let pwd1="";
+
+            for(let i=0;i<inp2.value;i++){
+                r=Math.floor(Math.random()*s4.length);
+                pwd1=pwd1+s4.charAt(r5);
+            }
+
+            pass1.innerHTML += "<li>" + pwd1+"</li>";
+    
         }
-        
-        
+    }
     </script>
 </body>
 </html>
