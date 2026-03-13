@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette</title>
+    <style>
+        table{
+            margin:auto;
+        }
+        td{
+            height:30px;
+            width:30px;
+        }
+    </style>
+</head>
+<body>
+    <table id="grid1"></table>
+
+    <script>
+        let grd1=document.getElementById("grid1");
+
+        for(let i=0;i<16;i++){
+            let row1=document.createElement("tr");       //creates table row element
+
+            for(let j=0;j<16;j++){
+                let col1=document.createElement("td");   //create 16 table col inside each row
+
+                let r=Math.floor(Math.random()*256);
+                let g=Math.floor(Math.random()*256);
+                let b=Math.floor(Math.random()*256);
+
+                col1.style.backgroundColor="rgb("+r+","+g+","+b+")";
+                row1.appendChild(col1);                  //appends col inside row
+            }
+            grd1.appendChild(row1);
+        }
+    </script>
+</body>
+</html>
