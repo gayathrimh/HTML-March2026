@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette</title>
+    <style>
+        table{
+            margin:auto;
+        }
+        td{
+            height:30px;
+            width:30px;
+            cursor: pointer;
+        }
+        #info{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        button{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table id="grid1"></table>
+
+    <div id="info">
+        RGB Value:  <span id="rgbValue">None</span>
+        <button onclick="copyRGB()">Copy</button>
+    </div>
+
+    <script>
+        let grd1=document.getElementById("grid1");
+        let rgbText=document.getElementById("rgbValue");
+
+        for(let i=0;i<16;i++){
+            let row1=document.createElement("tr");       //creates table row element
+
+            for(let j=0;j<16;j++){
+                let col1=document.createElement("td");   //create 16 table col inside each row
+
+                let r=Math.floor(Math.random()*256);
+                let g=Math.floor(Math.random()*256);
+                let b=Math.floor(Math.random()*256);
+
+                let color="rgb("+r+","+g+","+b+")";
+
+                col1.style.backgroundColor=color;
+
+                col1.onmouseover=function(){
+                    rgbText.innerText=color;
+                    currentColor=color;
+                };
+                row1.appendChild(col1);                  //appends col inside row
+            }
+            grd1.appendChild(row1);
+        }
+        function copyRGB(){
+            navigator.clipboard.writeText(currentColor);
+            alert("Copied:"+currentColor);
+        }
+    </script>
+</body>
+</html>
