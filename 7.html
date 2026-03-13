@@ -7,10 +7,12 @@
 </head>
 <body>
     <button id="button1">Generate Pwd</button>
+    
     <p id="password1">Hello</p>
     <script>
         let btn1=document.getElementById("button1");
         let pass1=document.getElementById("password1");
+        
         let s1="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let s2="abcdefghijklmnopqrstuvwxyz";
         let s3="0123456789";
@@ -26,18 +28,14 @@
             pwd1=pwd1+s1.charAt(r1);
             pwd1=pwd1+s2.charAt(r2);
             pwd1=pwd1+s3.charAt(r3);
-            r4=Math.floor(Math.random()*62);
-            pwd1=pwd1+s4.charAt(r4);
-            r4=Math.floor(Math.random()*62);
-            pwd1=pwd1+s4.charAt(r4);
-            r4=Math.floor(Math.random()*62);
-            pwd1=pwd1+s4.charAt(r4);
-            r4=Math.floor(Math.random()*62);
-            pwd1=pwd1+s4.charAt(r4);
-            r4=Math.floor(Math.random()*62);
-            pwd1=pwd1+s4.charAt(r4);
-            pwd1=pwd1+"\n";
-            pass1.innerHTML=pwd1;
+            for(let i=0;i<5;i++){
+                r4=Math.floor(Math.random()*62);
+                pwd1=pwd1+s4.charAt(r4);
+                
+            }
+            pass1.innerHTML += "<br>" + pwd1;
+            pwd1="";
+
         }
         
         
