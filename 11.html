@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette</title>
+    <style>
+        
+        #box1{
+            background-color: rgb(255,0,0);
+            height:100px;
+            width:100px;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Choose color</h3>
+    <form>
+        <input id="red1" type="number" placeholder="Enter value of red (0-255)"><br><br>
+        <input id="green1" type="number" placeholder="Enter value of green (0-255)"><br><br>
+        <input id="blue1" type="number" placeholder="Enter value of blue (0-255)"><br><br>
+        <button id="button1" type="button">Submit</button>
+    </form>
+
+    <div id="box1"></div>
+
+    <script>
+        let btn1=document.getElementById("button1");
+        let rd1=document.getElementById("red1");
+        let gr1=document.getElementById("green1");
+        let bl1=document.getElementById("blue1");
+        let bx1=document.getElementById("box1");
+        
+        btn1.onclick=function generateColor(){
+
+            let r=Number(rd1.value);
+            let g=Number(gr1.value);
+            let b=Number(bl1.value);
+
+            if(r<0 || r>255){
+                alert("Red value must be between 0 and 255");
+                return;
+            }
+
+            if(g<0 || g>255){
+                alert("Green value must be between 0 and 255");
+                return;
+            }
+
+            if(b<0 || b>255){
+                alert("Blue value must be between 0 and 255");
+                return;
+            }
+
+            let color="rgb("+r+","+g+","+b+")";
+            bx1.style.backgroundColor=color;
+            
+        }
+    </script>
+    
+</body>
+</html>
