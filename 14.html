@@ -21,7 +21,6 @@
             let api2=await api1.json();
             let random=Math.floor(Math.random()*api2.results.length);
             let result=api2.results[random].joke;
-            
             document.getElementById("joke1").textContent=result;
 
         }
