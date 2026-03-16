@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Generator</title>
+</head>
+<body>
+    
+        <input type="text" id="category" placeholder="enter the category">
+        <button id="button1">Submit</button>
+        <p id="joke1"></p>
+    
+
+    <script>
+        let btn1=document.getElementById("button1");
+        btn1.onclick=async function generateJoke(){
+            let header1={headers:{Accept:"application/json"}}
+            let api1=await fetch("https://icanhazdadjoke.com",header1);
+    
+            let api2=await api1.json();
+            let result=api2.joke;
+            document.getElementById("joke1").textContent=result;
+
+        }
+    </script>
+</body>
+</html>
