@@ -6,23 +6,26 @@
     <title>Joke Generator</title>
 </head>
 <body>
-    
         <input type="text" id="category" placeholder="enter the category">
         <button id="button1">Submit</button>
         <p id="joke1"></p>
     
-
     <script>
         let btn1=document.getElementById("button1");
         btn1.onclick=async function generateJoke(){
+            let category1=document.getElementById("category").value;
             let header1={headers:{Accept:"application/json"}}
-            let api1=await fetch("https://icanhazdadjoke.com",header1);
-    
+            let url1="https://icanhazdadjoke.com";
+            let url2=url1+"/search?term="+category1;
+            let api1=await fetch(url2,header1);
             let api2=await api1.json();
-            let result=api2.joke;
+            let random=Math.floor(Math.random()*api2.results.length);
+            let result=api2.results[random].joke;
+            
             document.getElementById("joke1").textContent=result;
 
         }
     </script>
 </body>
 </html>
+
