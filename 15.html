@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Presidents</title>
+</head>
+<body>
+    <img src="President1.jfif" id="image1">
+    <p id="name1"></p>
+    <button id="button1">←</button>
+    <button id="button2">→</button>
+
+    <script>
+        let img1=document.getElementById("image1");
+        let btn1=document.getElementById("button1");
+        let btn2=document.getElementById("button2");
+        let nam1=document.getElementById("name1");
+        let list1 = ["President1.jfif",
+         "President2.jfif",
+          "President3.jfif",
+           "President4.jfif",
+            "President5.jfif",
+             "President6.jfif",
+              "President7.jfif", 
+              "President8.jfif", 
+              "President9.jfif", 
+              "President10.jfif", 
+              "President11.jfif", 
+              "President12.jfif", 
+              "President13.jfif", 
+              "President14.jfif", 
+              "President15.jfif", 
+              "President16.jfif", 
+              "President17.jfif"];
+
+        let list2=["George Washington",
+                    "Abraham Lincoln",
+                    "Theodore Roosevelt",
+                    "Woodrow Wilson",
+                    "Franklin D. Roosevelt",
+                    "Harry S. Truman",
+                    "Dwight D. Eisenhower",
+                    "John F. Kennedy",
+                    "Richard Nixon",
+                    "Gerald Ford",
+                    "Jimmy Carter",
+                    "Ronald Reagan",
+                    "George H. W. Bush",
+                    "Bill Clinton",
+                    "George W. Bush",
+                    "Barack Obama",
+                    "Joe Biden"];
+        let num1=1;
+        
+        btn1.onclick=function prevPhoto(){
+            if (num1<0){
+                num1=16;
+            }
+            img1.src=list1[num1];
+            nam1.textContent=list2[num1];
+            num1-=1; 
+        }
+        btn2.onclick=function nextPhoto(){
+            num1=num1%17;
+            img1.src=list1[num1];
+            nam1.textContent=list2[num1];
+            num1+=1;
+        }
+    </script>
+</body>
+</html>
