@@ -6,8 +6,8 @@
     <title>Document</title>
     <style>
         .seg{
-            width: 600px;
-            height:100px;
+            width:600px;
+            height:150px;
             display: flex;
             justify-content: center;
         }
@@ -18,11 +18,11 @@
             background-color: white;
         }
         .green{
-            background-color:green;
+            background-color: green;
         }
         .button1{
-            width: 600px;
-            margin-top: 20px;
+            width:600px;
+            margin-top:20px;
             display: flex;
             justify-content: center;
         }
@@ -31,35 +31,21 @@
 <body>
     <div class="seg red"></div>
     <div class="seg white">
-        <img src="ashokachakra.png" id="ashokaChakra1" alt="Ashoka Chakra">
+        <img src="ashokachakra.png" alt="Ashoka Chakra">
     </div>
     <div class="seg green"></div>
+
     <div class="button1">
         <button id="id1">Play National Anthem</button>
         <audio src="National-Anthem-India.mp3" id="id2"></audio>
     </div>
-
+    
     <script>
-        let btn = document.getElementById("id1");
-        let audio = document.getElementById("id2");
-
-        btn.onclick = function() {
-            audio.play();
-        }
-        
-        let chakra1=document.getElementById("ashokaChakra1");
-        let ashokaChakraState=true;
-
-        chakra1.onclick=function(){
-            if (ashokaChakraState==true){
-                ashokaChakraState=false;
-                chakra1.style.opacity="0";
-            }else{
-                ashokaChakraState=true;
-                chakra1.style.opacity="1";
-            }
-        }
-
+        let btn1=document.getElementById("id1");
+        let media1=document.getElementById("id2");
+        btn1.onclick=function playAnthem(){
+            media1.play();
+        };
     </script>
 </body>
 </html>
